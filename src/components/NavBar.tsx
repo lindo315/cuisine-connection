@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  Heart,
-  Sun,
-  Moon,
-  Search,
-  Menu,
-  X,
-  Home,
-  BookOpen,
-} from "lucide-react";
+import { Heart, Sun, Moon, Menu, X, Home, BookOpen } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
 
 const NavBar: React.FC = () => {
@@ -83,18 +74,6 @@ const NavBar: React.FC = () => {
             Favorites
           </Link>
 
-          <Link
-            to="/search"
-            className={`flex items-center text-sm font-medium transition-colors ${
-              isActive("/search")
-                ? "text-primary"
-                : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-            }`}
-          >
-            <Search className="w-4 h-4 mr-1.5" />
-            Search
-          </Link>
-
           <button
             onClick={toggleTheme}
             className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -164,19 +143,6 @@ const NavBar: React.FC = () => {
             >
               <Heart className="w-4 h-4 mr-3" />
               Favorites
-            </Link>
-
-            <Link
-              to="/search"
-              className={`flex items-center p-2 rounded-lg text-sm font-medium ${
-                isActive("/search")
-                  ? "bg-primary/10 text-primary"
-                  : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Search className="w-4 h-4 mr-3" />
-              Search Recipes
             </Link>
           </nav>
         </div>

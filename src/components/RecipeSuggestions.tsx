@@ -85,7 +85,7 @@ const RecipeSuggestions: React.FC<SuggestionProps> = ({ query }) => {
   if (!suggestions.length) return null;
 
   return (
-    <div className="w-full max-w-4xl mx-auto mb-8 animate-fade-in">
+    <div className="w-full max-w-4xl mx-auto mt-8 mb-8 animate-fade-in">
       <div className="bg-white dark:bg-gray-800 backdrop-blur-lg rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
         <div className="flex items-center gap-2 mb-3">
           {query ? (
