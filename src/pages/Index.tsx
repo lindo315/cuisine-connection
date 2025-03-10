@@ -177,3 +177,8 @@ const Index = () => {
 };
 
 export default Index;
+
+// ADD: Back button to RecipeDetails.tsx
+// FIX: Clear Favorites button to actually clear favorites
+// FIX: Add missing alt text to images
+// ADD: State management for searches (keep search query in URL?)

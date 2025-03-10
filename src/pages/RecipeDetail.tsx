@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -203,7 +204,7 @@ const RecipeDetail = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-        <div className="absolute top-4 left-4 z-10">
+        <div className="absolute top-20 left-4 z-10">
           <button
             onClick={handleBackClick}
             className="p-2 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-md transition-all duration-200 hover:scale-105"
@@ -213,7 +214,7 @@ const RecipeDetail = () => {
           </button>
         </div>
 
-        <div className="absolute top-4 right-4 z-10 flex space-x-2">
+        <div className="absolute top-20 right-4 z-10 flex space-x-2">
           <button
             onClick={handlePrintClick}
             className="p-2 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-md transition-all duration-200 hover:scale-105"
@@ -257,7 +258,7 @@ const RecipeDetail = () => {
               {recipe.title}
             </h1>
 
-            <div className="flex flex-wrap items-center space-x-6 text-white/90 animate-fade-in">
+            <div className="flex flex-wrap items-center space-x-6 text-white/90 mb-10 animate-fade-in">
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-1.5" />
                 <span>{recipe.readyInMinutes} mins</span>
@@ -292,7 +293,7 @@ const RecipeDetail = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 -mt-16 relative z-10">
+      <div className="container mx-auto px-4 -mt-10 relative z-10">
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
           <div className="p-6 md:p-8">
             <div
