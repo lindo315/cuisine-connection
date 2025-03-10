@@ -7,6 +7,7 @@ import RecipeGrid from "../components/RecipeGrid";
 import RecipeSuggestions from "../components/RecipeSuggestions";
 import { useRecipeSearch } from "../hooks/useRecipeSearch";
 import { BookOpen, Clock, Utensils } from "lucide-react";
+import Footer from "../components/Footer";
 
 const Index = () => {
   const location = useLocation();
@@ -148,11 +149,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen pb-20 bg-gray-50 dark:bg-gray-900">
+    <div className="bg-gray-50 dark:bg-gray-900">
       <NavBar />
 
-      <div className="container mx-auto pt-28 px-4">
-        <main>
+      <main className="pb-20 flex-grow container mx-auto pt-28 px-4">
+        <div>
           <div className="text-center mb-10 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-display font-semibold tracking-tight mb-4 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
               Find the Perfect Recipe
@@ -167,11 +168,13 @@ const Index = () => {
 
           <RecipeSuggestions query={searchQuery} />
 
-          <FilterSection onFilterChange={handleFilterChange} />
+          {/* <FilterSection onFilterChange={handleFilterChange} /> */}
 
           {renderContent()}
-        </main>
-      </div>
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };

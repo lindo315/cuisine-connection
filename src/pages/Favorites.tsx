@@ -6,6 +6,7 @@ import RecipeGrid from "../components/RecipeGrid";
 import { useFavorites } from "../context/FavoritesContext";
 import { Recipe } from "../components/RecipeCard";
 import { toast } from "sonner";
+import Footer from "../components/Footer";
 
 const Favorites = () => {
   const { favorites, toggleFavorite, clearAllFavorites } = useFavorites();
@@ -73,10 +74,10 @@ const Favorites = () => {
   };
 
   return (
-    <div className="min-h-screen pb-20 bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen">
       <NavBar />
 
-      <div className="container mx-auto pt-28 px-4">
+      <main className="flex-grow container mx-auto mb-10 pt-28 px-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
           <div>
             <h1 className="text-3xl font-display font-semibold tracking-tight animate-fade-in mb-2">
@@ -261,7 +262,9 @@ const Favorites = () => {
             )}
           </div>
         )}
-      </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };
