@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Heart, Sun, Moon, Menu, X, Home, BookOpen } from "lucide-react";
+import {
+  Heart,
+  Sun,
+  Moon,
+  Menu,
+  X,
+  Home,
+  BookOpen,
+  Search,
+} from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
 
 const NavBar: React.FC = () => {
@@ -60,6 +69,18 @@ const NavBar: React.FC = () => {
           >
             <Home className="w-4 h-4 mr-1.5" />
             Home
+          </Link>
+
+          <Link
+            to="/recipes"
+            className={`flex items-center text-sm font-medium transition-colors ${
+              isActive("/recipes")
+                ? "text-primary"
+                : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+            }`}
+          >
+            <Search className="w-4 h-4 mr-1.5" />
+            Recipes
           </Link>
 
           <Link
@@ -130,6 +151,19 @@ const NavBar: React.FC = () => {
             >
               <Home className="w-4 h-4 mr-3" />
               Home
+            </Link>
+
+            <Link
+              to="/recipes"
+              className={`flex items-center p-2 rounded-lg text-sm font-medium ${
+                isActive("/recipes")
+                  ? "bg-primary/10 text-primary"
+                  : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Search className="w-4 h-4 mr-3" />
+              Recipes
             </Link>
 
             <Link

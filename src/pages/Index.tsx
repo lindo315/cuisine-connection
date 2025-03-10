@@ -21,8 +21,44 @@ const Index = () => {
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const searchFromUrl = searchParams.get("search");
+    const collectionFromUrl = searchParams.get("collection");
+
     if (searchFromUrl) {
       setSearchQuery(searchFromUrl);
+    }
+
+    if (collectionFromUrl) {
+      // Set filters based on collection type
+      const newFilters = { ...filters };
+
+      // Reset all filters first
+      Object.keys(newFilters).forEach((key) => {
+        newFilters[key] = false;
+      });
+
+      // Set the appropriate filters based on collection
+      switch (collectionFromUrl) {
+        case "quick":
+          setSearchQuery("quick easy"); // You could set a search term too
+          newFilters.quick = true;
+          break;
+        case "healthy":
+          setSearchQuery("healthy");
+          newFilters.vegetarian = true;
+          newFilters.healthy = true;
+          break;
+        case "dinner":
+          setSearchQuery("dinner main course");
+          newFilters.main = true;
+          break;
+        case "classic":
+          setSearchQuery("classic");
+          break;
+        default:
+          break;
+      }
+
+      setFilters(newFilters);
     }
   }, [location]);
 
