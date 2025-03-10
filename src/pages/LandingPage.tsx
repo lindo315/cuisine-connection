@@ -228,7 +228,7 @@ const LandingPage = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-primary">
+      <div className=" bg-primary text-white m-20 dark:bg-primary-darker border-t border-b border-primary/10 rounded-lg">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-display font-semibold tracking-tight mb-4 text-white">
@@ -279,6 +279,14 @@ const LandingPage = () => {
                 </li>
                 <li>
                   <Link
+                    to="/recipes"
+                    className="text-gray-400 hover:text-primary transition-colors"
+                  >
+                    Recipes
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/favorites"
                     className="text-gray-400 hover:text-primary transition-colors"
                   >
@@ -287,18 +295,10 @@ const LandingPage = () => {
                 </li>
                 <li>
                   <Link
-                    to="/"
+                    to="/about"
                     className="text-gray-400 hover:text-primary transition-colors"
                   >
-                    Categories
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    className="text-gray-400 hover:text-primary transition-colors"
-                  >
-                    Quick Recipes
+                    About
                   </Link>
                 </li>
               </ul>
@@ -308,6 +308,8 @@ const LandingPage = () => {
               <h4 className="text-lg font-medium mb-4">About</h4>
               <p className="text-gray-400 mt-3">
                 This site used the Spoonacular API to fetch the data you see.
+                The images and recipes are not owned by me. The icons are from{" "}
+                <a href="https://www.freepik.com/">Freepik</a>.
               </p>
             </div>
 
@@ -316,8 +318,8 @@ const LandingPage = () => {
               <div className="flex space-x-4 mb-4">
                 <a
                   href="https://github.com/lindo315"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
                   title="github"
+                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"
                   aria-label="Github"
                 >
                   <Github size={20} />

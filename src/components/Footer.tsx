@@ -33,6 +33,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/recipes"
+                  className="text-gray-400 hover:text-primary transition-colors"
+                >
+                  Recipes
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/favorites"
                   className="text-gray-400 hover:text-primary transition-colors"
                 >
@@ -41,18 +49,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/about"
                   className="text-gray-400 hover:text-primary transition-colors"
                 >
-                  Categories
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  Quick Recipes
+                  About
                 </Link>
               </li>
             </ul>
@@ -61,7 +61,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-medium mb-4">About</h4>
             <p className="text-gray-400 mt-3">
-              This site used the Spoonacular API to fetch the data you see.
+              This site used the Spoonacular API to fetch the data you see. The
+              images and recipes are not owned by me. The icons are from{" "}
+              <a href="https://www.freepik.com/">Freepik</a>.
             </p>
           </div>
 

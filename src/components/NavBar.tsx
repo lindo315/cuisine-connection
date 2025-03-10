@@ -9,6 +9,11 @@ const NavBar = () => {
   const location = useLocation();
   const { user, logout, isAuthenticated } = useAuth();
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, [location.pathname]); // Triggered whenever the pathname changes
+
   useEffect(() => {
     const checkDarkMode = () => {
       if (
@@ -86,6 +91,18 @@ const NavBar = () => {
               Home
             </Link>
             <Link
+              to="/about"
+              className={`px-3 py-2 rounded-md text-sm font-medium ${
+                location.pathname === "/about"
+                  ? "text-primary"
+                  : isDarkMode
+                  ? "text-gray-300 hover:text-primary"
+                  : "text-gray-700 hover:text-primary"
+              }`}
+            >
+              About
+            </Link>
+            <Link
               to="/recipes"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === "/recipes" ||
@@ -109,24 +126,11 @@ const NavBar = () => {
                     : "text-gray-700 hover:text-primary"
                 }`}
               >
-                <span className="flex items-center">
-                  <Heart className="w-4 h-4 mr-1" />
-                  Favorites
-                </span>
+                <span className="flex items-center">Favorites</span>
               </Link>
             )}
-            <Link
-              to="/about"
-              className={`px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === "/about"
-                  ? "text-primary"
-                  : isDarkMode
-                  ? "text-gray-300 hover:text-primary"
-                  : "text-gray-700 hover:text-primary"
-              }`}
-            >
-              About
-            </Link>
+
+            <div className="h-8 border-l border-gray-200 dark:border-gray-700"></div>
 
             {/* Dark Mode Toggle */}
             <button
@@ -140,6 +144,8 @@ const NavBar = () => {
                 <Moon className="w-5 h-5" />
               )}
             </button>
+
+            <div className="h-8 border-l border-gray-200 dark:border-gray-700"></div>
 
             {/* Auth Buttons */}
             {isAuthenticated ? (
@@ -219,9 +225,11 @@ const NavBar = () => {
         <div
           className={`md:hidden ${
             isDarkMode ? "bg-gray-900" : "bg-white"
-          } shadow-lg`}
+          } shadow-lg transition-transform duration-300 ease-in-out transform ${
+            isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
         >
-          <div className="px-4 pt-2 pb-6 space-y-1">
+          <div className="px-4 pt-2 pb-6 space-y-2">
             <Link
               to="/"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
@@ -234,6 +242,19 @@ const NavBar = () => {
               onClick={closeMenu}
             >
               Home
+            </Link>
+            <Link
+              to="/about"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                location.pathname === "/about"
+                  ? "text-primary"
+                  : isDarkMode
+                  ? "text-gray-300 hover:text-primary"
+                  : "text-gray-700 hover:text-primary"
+              }`}
+              onClick={closeMenu}
+            >
+              About
             </Link>
             <Link
               to="/recipes"
@@ -261,25 +282,9 @@ const NavBar = () => {
                 }`}
                 onClick={closeMenu}
               >
-                <span className="flex items-center">
-                  <Heart className="w-4 h-4 mr-2" />
-                  Favorites
-                </span>
+                <span className="flex items-center">Favorites</span>
               </Link>
             )}
-            <Link
-              to="/about"
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                location.pathname === "/about"
-                  ? "text-primary"
-                  : isDarkMode
-                  ? "text-gray-300 hover:text-primary"
-                  : "text-gray-700 hover:text-primary"
-              }`}
-              onClick={closeMenu}
-            >
-              About
-            </Link>
 
             <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-200 dark:border-gray-700">
               <button

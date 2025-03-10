@@ -34,7 +34,7 @@ const AboutPage = () => {
         </section>
 
         {/* Mission Section */}
-        <section className="py-12 bg-white dark:bg-gray-800">
+        <section className="py-12 bg-white dark:bg-gray-800 border-t border-b border-gray-200 dark:border-gray-700 rounded-lg">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-display font-semibold tracking-tight mb-6 text-gray-900 dark:text-white">
@@ -42,17 +42,22 @@ const AboutPage = () => {
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                 At CuisineConnection, we believe that food is more than just
-                sustenance—it's a universal language that brings people
+                sustenance — it's a universal language that brings people
                 together. Our mission is to make cooking accessible, enjoyable,
                 and inspiring for everyone, regardless of their skill level or
                 culinary background.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                 We curate a diverse collection of recipes from around the world,
                 celebrating the rich tapestry of global cuisine while helping
                 you discover new flavors and cooking techniques. Whether you're
                 a seasoned chef or just starting your culinary journey,
-                CuisineConnection is your companion in the kitchen.
+                CuisineConnection is your companion in the kitchen. Let's cook
+                together!
+              </p>
+              <p className="text-lg text-primary dark:text-gray-300">
+                <span className="font-bold">FYI:</span> This is all fake LMAO.
+                But I put it here to make it nice and such.
               </p>
             </div>
           </div>
@@ -114,22 +119,23 @@ const AboutPage = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-white dark:bg-gray-800">
+        <section className="py-16 bg-white dark:bg-gray-800 border-t border-b border-gray-200 dark:border-gray-700 rounded-lg">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto mb-12 text-center">
               <h2 className="text-3xl font-display font-semibold tracking-tight mb-4 text-gray-900 dark:text-white">
                 Meet Our Team
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400">
-                The passionate food lovers behind CuisineConnection
+                The passionate food lovers behind CuisineConnection.
               </p>
+              <p className="text-lg text-primary">Lol they don't exist.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden">
                   <img
-                    src="/api/placeholder/200/200"
+                    src="chef_1.png"
                     alt="Team member"
                     className="w-full h-full object-cover"
                   />
@@ -149,7 +155,7 @@ const AboutPage = () => {
               <div className="text-center">
                 <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden">
                   <img
-                    src="/api/placeholder/200/200"
+                    src="chef_2.png"
                     alt="Team member"
                     className="w-full h-full object-cover"
                   />
@@ -169,7 +175,7 @@ const AboutPage = () => {
               <div className="text-center">
                 <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 dark:bg-gray-700 mb-4 overflow-hidden">
                   <img
-                    src="/api/placeholder/200/200"
+                    src="chef_3.png"
                     alt="Team member"
                     className="w-full h-full object-cover"
                   />
@@ -272,7 +278,7 @@ const AboutPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-primary text-white">
+        <section className="py-20 bg-primary text-white mb-20 dark:bg-primary-darker border-t border-b border-primary/10 rounded-lg">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-display font-semibold tracking-tight mb-6">
